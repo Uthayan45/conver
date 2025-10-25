@@ -1,0 +1,217 @@
+body {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-container {
+  width: 400px;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.login-box, .chat-box {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: center;
+}
+
+/* Style the Join Chat heading to match app theme */
+.login-box h2 {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+/* Make the login form easier to use: left-align labels/inputs and
+   make the name input full-width and larger so users can type their name
+   comfortably on the first page. */
+
+
+.login-box {
+  text-align: left;
+}
+
+.login-box input {
+  width: 100%;
+  font-size: 16px;
+  padding: 12px;
+}
+
+.login-box input, .chat-box input {
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  background: #f1f1f1;
+  color: #222; /* ensure typed text is visible */
+  caret-color: #2575fc;
+}
+
+.login-box input::placeholder,
+.chat-box input::placeholder {
+  color: #999;
+}
+
+.login-box button, footer button {
+  background: #2575fc;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #6a11cb;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+header h3 {
+  color: #2575fc;
+  margin: 0;
+  font-size: 16px;
+}
+
+.recipient-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.recipient-box span {
+  font-size: 14px;
+  color: #666;
+}
+
+.recipient-select {
+  font-weight: 500;
+  color: #2575fc;
+  background: #f1f1f1;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+  min-width: 140px;
+}
+
+.recipient-select:hover {
+  background: #e5e5e5;
+}
+
+.recipient-select option {
+  color: #222;
+  padding: 8px;
+}
+
+.messages {
+  height: 300px;
+  overflow-y: auto;
+  background: #f8f8f8;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* Message wrapper for proper side-by-side alignment */
+.messages > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 8px 0;
+}
+
+.messages > div.msg-sent {
+  align-items: flex-end;
+}
+
+/* Base styles for both message types */
+.msg-sent p,
+.msg-received p {
+  max-width: 80%;
+  padding: 12px 16px;
+  margin: 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+/* Sent messages: right side with gradient */
+.msg-sent p {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  border-radius: 20px 20px 4px 20px;
+}
+
+/* Received messages: left side */
+.msg-received p {
+  background: #e9e9e9;
+  color: #222;
+  border-radius: 20px 20px 20px 4px;
+}
+
+/* Time alignment */
+.msg-sent .time {
+  align-self: flex-end;
+}
+
+.msg-received .time {
+  align-self: flex-start;
+}
+
+/* Message text styling */
+.messages p {
+  font-size: 15px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Timestamp styling */
+.time {
+  font-size: 11px;
+  margin: 4px 8px;
+  display: block;
+  color: #666;
+}
+
+.msg-sent .time {
+  color: #2575fc;
+}
+
+/* Hover effect on messages */
+.msg-sent p:hover,
+.msg-received p:hover {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+/* Typing indicator: darker and bold so it's visible */
+.typing {
+  color: #222;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 0.95rem;
+  margin: 5px 0;
+}
+
+footer {
+  display: flex;
+  gap: 10px;
+}
