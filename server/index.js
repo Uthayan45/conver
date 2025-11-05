@@ -9,7 +9,7 @@ const httpServer = createServer(app);
 
 const io = new Server(httpServer, {
   cors: {
-    origin: "https://conver-amber.vercel.app/", // Vite default port
+    origin: "https://conver-amber.vercel.app", // Vite default port
     methods: ["GET", "POST"]
   }
 });
